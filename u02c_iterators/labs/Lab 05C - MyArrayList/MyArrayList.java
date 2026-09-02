@@ -4,6 +4,9 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.ConcurrentModificationException;
 
+import java.util.Arrays;
+import java.lang.reflect.Array;
+
 public class MyArrayList<T> implements Iterable<T>
 {
    private T[] list;
@@ -14,13 +17,14 @@ public class MyArrayList<T> implements Iterable<T>
    }
 	
    @SuppressWarnings("unchecked")
-   public MyArrayList(int initSize) {
-   
+   public MyArrayList(int initSize) 
+   {
+      
    }
 	
    public void add(T value)
    {
-   
+      
    }
 	
    public void add(int index, T value)
