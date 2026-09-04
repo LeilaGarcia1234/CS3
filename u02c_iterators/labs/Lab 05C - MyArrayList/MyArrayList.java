@@ -11,6 +11,7 @@ public class MyArrayList<T> implements Iterable<T>
 {
    private T[] list;
    private int count;
+   private int modCount;
 	
    public MyArrayList() {
       this(10);
@@ -19,17 +20,41 @@ public class MyArrayList<T> implements Iterable<T>
    @SuppressWarnings("unchecked")
    public MyArrayList(int initSize) 
    {
-      
+      count = initSize;
+      list = (T[]) new Object[initSize];
    }
 	
    public void add(T value)
    {
-      
-   }
-	
+      if(count == list.length)
+         resizeArray();
+         
+      list[count++] = value;
+	}
+   
    public void add(int index, T value)
    {
-   
+      //if(index<0 || index > count)
+        // throws IndexOutOfBoundsException
+      
+      T[] temp = list;
+      list = (T[]) new Object[list.length + 1];
+      
+      /*
+      [1, 2, 3, 5]
+      [1, 2, 3, #, 5]
+      add(spot 3, val 4)
+      new array +1 size
+      copy nums until index into new array
+      copy in value
+      copy in rest of vals
+      for(int i=0; i<index; i++)
+      {
+         list[i] = temp[i];
+      }
+      list[temp.length-1] = value;
+      for(int i=temp.length; 
+      */
    }
 	
    public void clear()
