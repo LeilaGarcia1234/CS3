@@ -10,6 +10,9 @@ public class Lab09b
 {
 	public static void main(String args[])
 	{
-		//add test cases		
+		//add test cases	
+      AtCounter test = new AtCounter();
+      test.countAts(0,0);
+      out.println(test);	
 	}
 }
