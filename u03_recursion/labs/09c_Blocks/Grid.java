@@ -41,12 +41,23 @@ public class Grid
 
 	private int findMax(int r, int c, String search)
 	{
-		return 0;
+      //search entire array for letter, if the spot has that letter, check up down left right to see if that one is
+      //also the letter, if it is then count++ and set count to the max ; once you are done with one spot go to the next 
+      //and do the same thing if the next count is greater than max then set that one as the new max
+      
 	}
 
 	public String toString()
 	{
 		String output="";
+      for(int r=0; r<grid.length; r++)
+      {
+         for(int c=0; c<grid[r].length; c++)
+         {
+            output += grid[r][c] + " ";
+         }
+         output += "\n";
+      }
 		return output;
 	}
 }
