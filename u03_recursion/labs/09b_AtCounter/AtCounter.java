@@ -23,7 +23,9 @@ public class AtCounter
 									{'-','@','@','@','@','@','-','@','@','@'}};
      // atCount=0;
 	}
-
+   
+   
+   
 	public int countAts(int r, int c) {
 
 		//add in recursive code to count up the # of @s connected
