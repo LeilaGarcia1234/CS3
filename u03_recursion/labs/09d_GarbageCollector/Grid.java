@@ -30,8 +30,7 @@ public class Grid
 
 	public void setSpot(int row,int col, Cell val)
 	{
-	
-	
+	   grid[row][col] = val;
 	}
 	
 	public Cell getSpot(int row, int col)

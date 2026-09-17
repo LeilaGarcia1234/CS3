@@ -40,7 +40,7 @@ public class Grid
 		{
 			for(int c=0; c<grid[r].length; c++)
 			{
-				int count = findMax(r, c, search);
+				int count = findMax(r, c, val);
 				if(count > max)
 				{
 					max = count;
@@ -52,9 +52,7 @@ public class Grid
 
 	private int findMax(int r, int c, String search)
 	{
-      //search entire array for letter, if the spot has that letter, check up down left right to see if that one is
-      //also the letter, if it is then count++ and set count to the max ; once you are done with one spot go to the next 
-      //and do the same thing if the next count is greater than max then set that one as the new max
+ 
     	if(r<0 || r>= grid.length ||c<0 || c>= grid[r].length)
 		{
 			return 0;
@@ -65,9 +63,9 @@ public class Grid
 		}
 		grid[r][c] = " ";
 		return 1 + findMax(r-1, c, search)
-			     + findMax(r+1, c, search)
-				 + findMax(r, c-1, search)
-				 + findMax(r, c+1, search);
+			      + findMax(r+1, c, search)
+				   + findMax(r, c-1, search)
+				   + findMax(r, c+1, search);
 		
 	}
 
