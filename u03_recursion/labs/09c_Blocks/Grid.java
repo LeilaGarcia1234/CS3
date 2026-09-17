@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -35,8 +35,18 @@ public class Grid
 
 	public int findMax(String val)
 	{
-		int count=-1;
-		return count;
+		int max = 0;
+		for(int r=0; r<grid.length; r++)
+		{
+			for(int c=0; c<grid[r].length; c++)
+			{
+				int count = findMax(r, c, search);
+				if(count > max)
+				{
+					max = count;
+				}
+			}
+		}
 	}
 
 	private int findMax(int r, int c, String search)
@@ -44,7 +54,8 @@ public class Grid
       //search entire array for letter, if the spot has that letter, check up down left right to see if that one is
       //also the letter, if it is then count++ and set count to the max ; once you are done with one spot go to the next 
       //and do the same thing if the next count is greater than max then set that one as the new max
-      
+        int max = 0;
+		
 	}
 
 	public String toString()
