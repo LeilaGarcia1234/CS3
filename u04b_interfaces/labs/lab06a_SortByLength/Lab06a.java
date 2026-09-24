@@ -15,6 +15,14 @@ public class Lab06a
 {
 	public static void main( String args[] ) throws IOException
 	{
+
 		//add test cases
+      Scanner file = new Scanner(new File("lab06a.dat"));
+      Arraylist<String> list = new Arraylist<>();
+      while(file.hasNext())
+      {
+         list.add(file.next());
+      }
+      
 	}
 }

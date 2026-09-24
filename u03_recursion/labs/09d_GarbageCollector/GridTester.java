@@ -26,7 +26,7 @@ public class GridTester
 		out.println(gridTest);	
 		
 		out.println(gridTest.getSpot(1,0));		
-		out.println(gridTest.getSpot(0,1));							
+    //out.println(gridTest.getSpot(0,1));							
 	}
 }
 

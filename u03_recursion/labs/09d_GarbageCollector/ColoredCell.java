@@ -23,7 +23,7 @@ public class ColoredCell extends Cell
 	public ColoredCell(boolean fill)
 	{
       filled = fill;
-
+      setColor(Color.BLUE);
 	}
 
 	public ColoredCell(int x, int y, boolean fill)
@@ -31,6 +31,7 @@ public class ColoredCell extends Cell
       setX(x);
       setY(y);
       filled = fill;
+      setColor(Color.BLUE);
 	}
 
 	public ColoredCell(int x, int y, int w, int h, boolean fill)
@@ -40,6 +41,7 @@ public class ColoredCell extends Cell
       setWidth(w);
       setHeight(h);
       filled = fill;
+      setColor(Color.BLUE);
 	}
 
 	public ColoredCell(int x, int y, int w, int h, boolean fill, Color c)
@@ -48,8 +50,8 @@ public class ColoredCell extends Cell
       setY(y);
       setWidth(w);
       setHeight(h);
-      filled = fill;
-      color = c;
+      setFilled(fill);
+      setColor(c);
 	}
 
 	public void setFilled(boolean fill)
@@ -64,7 +66,7 @@ public class ColoredCell extends Cell
 	
 	public boolean getFilled()
 	{
-		return false;
+		return filled;
 	}
 	
 	public Color getColor()
@@ -77,10 +79,6 @@ public class ColoredCell extends Cell
 		window.setFont(new Font("TAHOMA",Font.BOLD,28));
 		window.setColor(getColor());
 		window.drawRect(getX(),getY(),getWidth(),getHeight());
-
-
-
-
 
 	}
 	

@@ -19,8 +19,7 @@ public class Grid
 
 	public Grid(int rows, int cols)
 	{
-	
-	
+	   setSize(rows, cols);
 	}
 
 	public void setSize(int rows, int cols)
@@ -61,10 +60,15 @@ public class Grid
 				Cell spot = grid[r][c];
 				
 				//if the current spot is not null
-
-
+            if(spot != null)
+            {
+               full = true;
+            }
 				//else
-
+            else
+            {
+               full = false;
+            }
 			}
 		}
 		return full;
@@ -72,17 +76,15 @@ public class Grid
 	
 	public String toString()
 	{
-		String output="";
-		//for loop for row
-	
-	
-			//for loop for col
-	
-	
-	
-	
-	
-	
+      String output="";
+      for(int r=0; r<grid.length; r++)
+      {
+         for(int c=0; c<grid[r].length; c++)
+         {
+            output += grid[r][c] + " ";
+         }
+         output += "\n";
+      }
 		return output;
 	}
 
