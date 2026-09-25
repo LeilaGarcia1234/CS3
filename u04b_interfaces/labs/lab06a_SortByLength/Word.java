@@ -9,11 +9,8 @@ import static java.lang.System.*;
 public class Word implements Comparable<Word>
 {
 	//add an instance variable and a constructor
-   private ArrayList<String> words;
-   public Word(Arraylist w)
-   {
-      words = w;
-   }
+   //
+   String word = "";
 	//add a compareTo
    // * public int compareTo(Word x) {    }
    
