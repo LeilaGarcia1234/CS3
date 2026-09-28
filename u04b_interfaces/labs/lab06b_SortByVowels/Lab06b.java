@@ -16,5 +16,7 @@ public class Lab06b
 	public static void main( String args[] ) throws IOException
 	{
 		//add test cases		
+      VowelWord test = new VowelWord();
+      
 	}
 }

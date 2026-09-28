@@ -18,11 +18,11 @@ public class Lab06a
 
 		//add test cases
       Scanner file = new Scanner(new File("lab06a.dat"));
-      Arraylist<String> list = new Arraylist<>();
+      ArrayList<Word> list = new ArrayList<>();
       while(file.hasNext())
       {
          list.add(file.next());
       }
-      
-	}
+      Word test = new Word(list);
+     	}
 }
