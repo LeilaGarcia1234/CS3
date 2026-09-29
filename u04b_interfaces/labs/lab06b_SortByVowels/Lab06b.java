@@ -16,11 +16,10 @@ public class Lab06b
 	public static void main( String args[] ) throws IOException
 	{
 		//add test cases		
-      Scanner file = new Scanner(new File("lab06b.daat"));
-		int count = file.nextInt();
+      Scanner file = new Scanner(new File("lab06b.dat"));
+		
 		ArrayList<VowelWord> list = new ArrayList<>();
-
-		for(int i=0; i<count; i++)
+         while(file.hasNext())
 			{
 			list.add(new VowelWord(file.next()));
 			}
