@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -10,17 +10,17 @@ public class Word implements Comparable<Word>
 {
 	//add an instance variable and a constructor
    //
-   String word = "";
-   ArrayList<Word> words;
-   public Word(ArrayList<Word> wds)
+   private String word;
+   
+   public Word(String wrd)
    {
-      words = wds;
+      this.word = wrd;
    }
    
 	//add a compareTo
    public int compareTo(Word other) 
    {    
-      word = 
+      
       if(this.word.length() > other.word.length())
             return 1;
       if(this.word.length() < other.word.length())
@@ -31,7 +31,6 @@ public class Word implements Comparable<Word>
 	//add a toString
    public String toString()  
    {    
-      String output = "";
-      return output;
+      return word;
    }
 }
