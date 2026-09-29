@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 class VowelWord implements Comparable<VowelWord>
 {
 	//add a string instance variable
-	String word = "";
+	private String word;
 
 	//add a constructor
    public VowelWord(String wrd)
@@ -21,14 +21,14 @@ class VowelWord implements Comparable<VowelWord>
 	{
 		String vowels = "AEIOUaeiou";
 		int vowelCount=0;
-      String wordy = word;
-      for(int i=0; i<wordy.length(); i++)
+      
+      for(int i=0; i<word.length(); i++)
       {
-         if(wordy.substring(i,i+1).indexOf(vowels) != -1)
+          String str = word.substring(i,i+1);
+		  if(vowels.contains(str))
          {
             vowelCount++;
-         }
-         wordy = wordy.substring(i+1);
+		 }
       }
 		return vowelCount;
 	}
@@ -36,9 +36,9 @@ class VowelWord implements Comparable<VowelWord>
 	public int compareTo(VowelWord other)
 	{
 		
-      if(this.word.numVowels() > other.word.numVowels())
+      if(this.numVowels() > other.numVowels())
             return 1;
-      if(this.word.numVowels() < other.word.numVowels())
+      if(this.numVowels() < other.numVowels())
             return -1;
       return this.word.compareTo(other.word);
       
@@ -49,12 +49,6 @@ class VowelWord implements Comparable<VowelWord>
 	public String toString()
 	{
 		
-      for(int i=0; i<something.length-1; i++)
-            if(str.compareTo(other) > 0)
-               String temp = str;
-               str = other;
-               other = temp;
-      */
-      return "";
+      return word;
 	}
 }
