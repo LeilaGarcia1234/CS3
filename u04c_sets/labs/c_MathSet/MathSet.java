@@ -20,31 +20,59 @@ public class MathSet
 
 	public MathSet(String o, String t)
 	{
+      one = new TreeSet<Integer>();
+      two = new TreeSet<Integer>();
+      String[] ones = o.split(" ");  
+     
+      for(String s : ones)
+         one.add(Integer.valueOf(s));
+         
+      String[] twos = t.split(" ");
+      
+      for(String s : twos)
+         two.add(Integer.valueOf(s));
+      
 	}
 
 	public Set<Integer> union()
 	{
-		return null;
+		Set<Integer> union = new TreeSet<>(one);
+      union.addAll(two);
+      return union;
 	}
 
 	public Set<Integer> intersection()
 	{
-		return null;
+		Set<Integer> intersection = new TreeSet<>(one);
+      intersection.retainAll(two);
+      return intersection;
 	}
 
 	public Set<Integer> differenceAMinusB()
 	{
-		return null;
+		//everything in one NOT in two
+      //retainAll() = keeps only elements in A that are in B  (removes elements not in B)
+      //one - intersection
+      Set<Integer> diff = new TreeSet<>(one);
+      diff.removeAll(intersection());
+      return diff;
 	}
 
 	public Set<Integer> differenceBMinusA()
 	{
-		return null;
+      Set<Integer> diff = new TreeSet<>(two);
+      diff.removeAll(intersection());
+		return diff;
 	}
 	
 	public Set<Integer> symmetricDifference()
 	{		
-		return null;
+		Set<Integer> symm1 = new TreeSet<>(one);
+      symm.addAll(two);
+      retain(two)
+      remove(intersection)
+      
+      return null;
 	}	
 	
 	public String toString()
