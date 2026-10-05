@@ -67,16 +67,15 @@ public class MathSet
 	
 	public Set<Integer> symmetricDifference()
 	{		
-		Set<Integer> symm1 = new TreeSet<>(one);
-      symm.addAll(two);
-      retain(two)
-      remove(intersection)
-      
-      return null;
+		Set<Integer> symm = new TreeSet<>(one); 
+      symm.addAll(differenceAMinusB());
+      symm.addAll(differenceBMinusA());
+      symm.removeAll(intersection());
+      return symm;
 	}	
 	
 	public String toString()
 	{
-		return "Set one " + one + "\n" +	"Set two " + two +  "\n";
+		return "Set one " + one + "\n" +	"Set two " + two +  "\n\n";
 	}
 }
