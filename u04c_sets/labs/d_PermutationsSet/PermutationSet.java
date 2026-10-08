@@ -8,7 +8,7 @@ public class PermutationSet
       Set<String> set = new HashSet<>();
       // Throw a NPE
       if (word == null)
-         throw new NullPointerException("word is null stop it");
+         throw new NullPointerException("word cannot be null");
       // If `word` is the empty string, add it to your set before returning the set.
       if (word.length() == 0) {
          set.add(word);
@@ -23,15 +23,14 @@ public class PermutationSet
             // Add this permutation to our set of permutations.
             //
             
-      String firstChar = word.substring(0,1); //C  -A  -""
-      String rest = word.substring(1);        //AT -T -""
+      String firstChar = word.substring(0,1); 
+      String rest = word.substring(1);        
       Set<String> permSet = permutations(rest);
-      //for(int i=0; i<permSet.size(); i++)
       for(String s : permSet)
       {
          for(int x=0; x<=s.length(); x++)
          {
-            String permute = rest.substring(0,x) + firstChar + rest.substring(x);
+            String permute = s.substring(0,x) + firstChar + s.substring(x);
             set.add(permute);
          }
       }
