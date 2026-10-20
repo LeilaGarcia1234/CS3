@@ -67,8 +67,19 @@ public class GameBoard extends Canvas implements MouseListener
 			if(determineWinner(window))
 			{
 			  //make a new board	
-			  
+           //vvvv  NO  vvvv
+			  mouseClicked = false;
+		mouseX = mouseY = 0;
+		mouseButton = 0;
+		prevMouseButton = -1;
+		
+		board = new Grid(BOARDSIZE,BOARDSIZE);
+		
+		addMouseListener(this);
+		setBackground(Color.WHITE);
+           // ^^^^ NO ^^^^
 			  //clear the screen
+           repaint();
 			}	
 			mouseClicked = false;
 		}
@@ -92,10 +103,11 @@ public class GameBoard extends Canvas implements MouseListener
 				prevMouseButton=mouseButton;
 			}
 			//if BUTTON3 was pressed and BUTTON3 was not pressed last mouse press
-
-
+            if(mouseButton==MouseEvent.BUTTON3 && prevMouseButton!=mouseButton)
+            {
 				//save the current button pressed to compare to next button pressed
 				prevMouseButton=mouseButton;				
+            }
 		
 		}
 	}
@@ -123,6 +135,7 @@ public class GameBoard extends Canvas implements MouseListener
 		if(winner.equals(""))
 		{
 			//check for diagonal winner
+         winner = "x or y?"
 		}
 		
 		if(winner.equals(""))

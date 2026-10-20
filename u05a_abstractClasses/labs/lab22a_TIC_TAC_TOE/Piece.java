@@ -22,47 +22,46 @@ public class Piece extends Cell implements Nameable
 
 	public Piece(String n)
 	{
-
-
-	
+      super(5,5,5,5);
+      name = n;
+      setColor(Color.BLUE);
 	}
 
 	public Piece(int x, int y, String n)
 	{
-
-
-	
+      
+      super(x,y);
+      setName(n);
+      setColor(Color.BLUE);
 	}
 
 	public Piece(int x, int y, int w, int h, String n)
 	{
-
-
-		
+      super(x,y,w,h);
+      setName(n);
+      setColor(Color.BLUE);
 	}
 
 	public Piece(int x, int y, int w, int h, String n, Color c)
 	{
-
-
-	
+      super(x,y,w,h);
+      setName(n);
+      setColor(c);
 	}
 
 	public void setName(String n)
 	{
-
-
+      name = n;
 	}
 
 	public void setColor(Color c)
 	{
-
-
+      color = c;
 	}
 	
 	public String getName()
 	{
-		return "";
+		return "" + name;
 	}
 	
 	public Color getColor()
@@ -74,13 +73,10 @@ public class Piece extends Cell implements Nameable
 	{
 		window.setFont(new Font("TAHOMA",Font.BOLD,28));
 		window.setColor(getColor());
-
-
-
 	}
 	
 	public String toString()
 	{
-		return "";
+		return getX() + " " + getY() + " " + getWidth() + " " + getHeight() + " " + name + " " + color;
 	}
 }
