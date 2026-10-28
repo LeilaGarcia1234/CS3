@@ -10,9 +10,19 @@ public class Number implements Comparable<Number>
 {
 
 	//add in instance variables
-	
+	private int number;
+   private int base;
+   private int base10;
+   private int binary;
 	//add in a constructor or two
-
+   
+   public Number(int num, int bs, int bs10, int bin)
+   {
+      number = num;
+      base = bs;
+      base10 = 0;
+      binary = 0;
+   }
 
 	public int compareTo(Number param)
 	{

@@ -67,17 +67,8 @@ public class GameBoard extends Canvas implements MouseListener
 			if(determineWinner(window))
 			{
 			  //make a new board	
-           //vvvv  NO  vvvv
-			  mouseClicked = false;
-		mouseX = mouseY = 0;
-		mouseButton = 0;
-		prevMouseButton = -1;
-		
-		board = new Grid(BOARDSIZE,BOARDSIZE);
-		
-		addMouseListener(this);
-		setBackground(Color.WHITE);
-           // ^^^^ NO ^^^^
+
+       
 			  //clear the screen
            repaint();
 			}	
@@ -103,11 +94,14 @@ public class GameBoard extends Canvas implements MouseListener
 				prevMouseButton=mouseButton;
 			}
 			//if BUTTON3 was pressed and BUTTON3 was not pressed last mouse press
-            if(mouseButton==MouseEvent.BUTTON3 && prevMouseButton!=mouseButton)
-            {
+            
+				if(piece==null)
+				{
+					board.setSpot(r,c,new Piece(5+c*50+50,5+r*50+50,WIDTH/3-10,HEIGHT/3-10,"O",Color.RED));
+				}
 				//save the current button pressed to compare to next button pressed
 				prevMouseButton=mouseButton;				
-            }
+       }
 		
 		}
 	}
