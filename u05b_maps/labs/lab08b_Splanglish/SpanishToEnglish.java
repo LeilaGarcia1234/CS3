@@ -14,31 +14,20 @@ public class SpanishToEnglish
 
 	public SpanishToEnglish()
 	{
-
-
-
+      pairs = new TreeMap<String, String>();
 	}
 
 	public void putEntry(String entry)
 	{
 		String[] list = entry.split(" ");
-
-
-
-
-
+      pairs.put(list[0], list[1]);
+      
 	}
 
 	public String translate(String sent)
 	{
 		Scanner chop = new Scanner(sent);
-		String output ="";
-
-
-
-
-
-
+		String output = pairs.get(sent);
 		return output;
 	}
 

@@ -24,12 +24,12 @@ public class BinarySorter
       
       while(scan.hasNext())
       {
-         numList.add(new Number( Integer.parseInt(scan.next()), Integer.parseInt(scan.next()) , 0, 0   )   );
+         numList.add(new Number( scan.next(), Integer.parseInt(scan.next())  )   );
 
       }
       
       // Sort the list.
-      
+      Collections.sort(numList);
       
       out.printf("%-6s %-4s %-6s %s %n", "number", "base", "base10", "binary");
       for(Number n : numList)
