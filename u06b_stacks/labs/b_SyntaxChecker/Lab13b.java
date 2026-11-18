@@ -12,5 +12,8 @@ public class Lab13b
 	public static void main ( String[] args )
 	{
 		//add test cases		
+      SyntaxChecker test = new SyntaxChecker("[ { } ]");
+      out.println(test);
+      out.println(test.checkExpression());
 	}
 }

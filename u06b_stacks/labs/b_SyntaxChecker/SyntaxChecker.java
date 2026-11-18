@@ -6,6 +6,9 @@
 
 import java.util.Stack;
 import static java.lang.System.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class SyntaxChecker
 {
@@ -28,19 +31,22 @@ public class SyntaxChecker
 
 	public boolean checkExpression()
 	{
-      //You can change this to a stack of Strings if you prefer.
-   	//Stack<Character> symbols;   
+      //stack that stores symbols from expression
       Stack<String> symbols = new Stack<>();
+      //make exp into array of individual chars
       String[] words = exp.split(" ");
+      //for each char in array. add that char to stack
       for(String symbol : words)
       {
-         stack.push(symbol);
+         symbols.push(symbol);
       }
-      
-      Map<String, String> map = new Map<String, String>();
+      out.println(symbols);
+      /*
+      Map<String, String> map = new TreeMap<String, String>();
       map.put("[","]");
       map.put("{","}");
       map.put("(",")");
+      map.put("<",">");
       
       while(!symbols.isEmpty())
       {
@@ -50,13 +56,28 @@ public class SyntaxChecker
          else if(map.containsValue(sym))
          {
             if(!symbols.isEmpty())
-                
+            {
+                symbols.pop();
+                //if symbol equals close? what
+                //check for a match with curr close symbol?
+                return true;
+            }
+            else
+               return false; //?
+            
          }
       }
          
-   
+      */
 		return false;
+      
 	}
-
+   
 	//write a toString method
+   
+   public String toString()
+   {
+      return exp;
+   }
+   
 }
