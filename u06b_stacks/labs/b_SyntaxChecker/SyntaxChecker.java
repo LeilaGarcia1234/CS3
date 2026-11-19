@@ -31,45 +31,36 @@ public class SyntaxChecker
 
 	public boolean checkExpression()
 	{
-      //stack that stores symbols from expression
       Stack<String> symbols = new Stack<>();
-      //make exp into array of individual chars
-      String[] words = exp.split(" ");
-      //for each char in array. add that char to stack
-      for(String symbol : words)
-      {
-         symbols.push(symbol);
-      }
-      out.println(symbols);
-      /*
+      String[] values = exp.split(" ");
+      
       Map<String, String> map = new TreeMap<String, String>();
       map.put("[","]");
       map.put("{","}");
       map.put("(",")");
       map.put("<",">");
       
-      while(!symbols.isEmpty())
+      boolean what = false;
+      for(int i=0; i<values.length; i++)
       {
-         String sym = symbols.peek();
-         if(map.containsKey(sym))
-            symbols.push(sym);
-         else if(map.containsValue(sym))
+         String val = values[i];
+         if(map.containsKey(val))
+         {
+            symbols.push(val);
+         }
+         else if(map.containsValue(val))
          {
             if(!symbols.isEmpty())
             {
-                symbols.pop();
-                //if symbol equals close? what
-                //check for a match with curr close symbol?
-                return true;
+               String popped = symbols.pop();
+               if(map.get(popped) == (val))
+                  what = false;
+               else
+                  what = true;
             }
-            else
-               return false; //?
-            
          }
       }
-         
-      */
-		return false;
+		return what;
       
 	}
    
@@ -77,7 +68,10 @@ public class SyntaxChecker
    
    public String toString()
    {
-      return exp;
+      if(checkExpression())
+         return exp + " is correct";
+      else
+         return exp + " is incorrect";
    }
    
 }

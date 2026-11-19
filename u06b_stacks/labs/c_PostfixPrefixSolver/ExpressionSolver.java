@@ -18,7 +18,8 @@ public class ExpressionSolver
                a supported operator.
    **/
    private static double calc(double one, double two, String op) {
-   
+      
+      return 0.0;
    }
 
    /*** Postfix Evaluator ***/   
